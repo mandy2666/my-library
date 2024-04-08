@@ -5,9 +5,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                mystep() 
-           }
+                greet 'World'
+            }
         }
     }
 }
+
 
