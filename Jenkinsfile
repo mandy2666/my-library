@@ -1,11 +1,14 @@
-@library("my-library")
+@Library("my-library")
+
 pipeline {
     agent any
     stages {
         stage('Hello') {
             steps {
                 var()
+                
             }
         }
     }
 }
+
