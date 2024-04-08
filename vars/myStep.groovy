@@ -1,3 +1,4 @@
-def call() {
-    echo "Hello mandy."
+def greet(name) {
+    echo "Hello, ${name}!"
 }
+
