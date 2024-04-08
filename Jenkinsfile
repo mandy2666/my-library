@@ -5,9 +5,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                var()
-                
-            }
+                vars() 
+           }
         }
     }
 }
