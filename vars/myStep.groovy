@@ -1,12 +1,7 @@
 // File: pipeline/vars/myStep.groovy
 
-def call() {
-     ([usernamePassword(
-            credentialsId: "docker_cred",
-            usernameVariable: "USER",
-            passwordVariable: "PASS"
-    )]) {
-        sh "docker login -u '$USER' -p '$PASS'"
+def loginToDockerHub(String username, String password) {
+    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+        sh "docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD"
     }
 }
-
