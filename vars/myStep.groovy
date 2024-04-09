@@ -1,6 +1,12 @@
 // File: pipeline/vars/myStep.groovy
 
 def call() {
-     sh "echo hello mandy"
+     ([usernamePassword(
+            credentialsId: "docker_cred",
+            usernameVariable: "USER",
+            passwordVariable: "PASS"
+    )]) {
+        sh "docker login -u '$USER' -p '$PASS'"
+    }
 }
 
